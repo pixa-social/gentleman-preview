@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Gentleman's Magazine — New Series No. 1</title>
+<meta name="description" content="A digital New Series of The Gentleman's Magazine: briefs on AI, markets, policy, and chain infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,600&family=Newsreader:ital,opsz,wght@0,8..72,400;0,8..72,500;1,8..72,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f4f1ea;
+  --paper-2: #ebe6dc;
+  --ink: #141312;
+  --ink-2: #3c3832;
+  --rule: #cfc8bb;
+  --crimson: #8f1d2c;
+  --crimson-dark: #6b1520;
+  --muted: #6a645a;
+  --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); color: var(--ink); scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--serif);
+  background: var(--paper);
+  color: var(--ink);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--crimson); }
+::selection { background: #e4dccb; color: var(--ink); }
+.page-wrap { margin-inline: auto; max-width: 72rem; padding-inline: 1.5rem; }
+@media (min-width: 768px) { .page-wrap { padding-inline: 3.25rem; } }
+@media (min-width: 1024px) { .page-wrap { padding-inline: 4.25rem; } }
+.page-main { margin-inline: auto; max-width: 72rem; padding: 2.5rem 1.5rem 5rem; }
+@media (min-width: 768px) { .page-main { padding: 3rem 3.25rem 6rem; } }
+.rule { height: 1px; background: var(--rule); }
+.rule-strong { height: 1px; background: var(--ink); }
+.rule-double { height: 4px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.kicker {
+  font-family: var(--sans); font-size: 0.6875rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--crimson);
+}
+.meta {
+  font-family: var(--sans); font-size: 0.6875rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+}
+.masthead-title {
+  font-family: var(--display);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 144;
+  font-weight: 560;
+  letter-spacing: -0.038em;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+.small-caps { font-variant: small-caps; letter-spacing: 0.16em; text-transform: lowercase; }
+.bar { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0; }
+.mast { text-align: center; padding: 2.4rem 0 2.1rem; }
+.mast a { color: var(--ink); }
+.mast .masthead-title { display: block; font-size: clamp(2.15rem, 7.4vw, 5.6rem); }
+.sub { margin: 1rem 0 0; font-style: italic; font-size: 1.05rem; color: var(--ink-2); }
+nav ul {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 0.5rem 2rem; padding: 0.75rem 0; margin: 0; list-style: none;
+  font-family: var(--sans); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.cover h1 {
+  margin: 1rem 0 0;
+  max-width: 52rem;
+  font-family: var(--display);
+  font-size: clamp(2.35rem, 5.6vw, 4.85rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.038em;
+}
+.dek { margin: 1.4rem 0 0; max-width: 36rem; font-size: 1.28rem; line-height: 1.55; color: var(--ink-2); }
+.two { display: grid; gap: 0; }
+@media (min-width: 768px) { .two { grid-template-columns: 1fr 1fr; } }
+.col { padding: 2.2rem 0; }
+@media (min-width: 768px) {
+  .col:first-child { border-right: 1px solid var(--rule); padding-right: 2rem; }
+  .col:last-child { padding-left: 2rem; border-top: 0; }
+  .col { padding-top: 2.4rem; padding-bottom: 2.4rem; }
+}
+@media (max-width: 767px) { .col + .col { border-top: 1px solid var(--rule); } }
+.brief-title {
+  margin: 0.7rem 0 0;
+  font-family: var(--display);
+  font-size: 1.65rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 560;
+}
+.register { padding: 2.5rem 0 1rem; }
+.reg-grid { display: grid; gap: 1.5rem; margin-top: 1.4rem; }
+@media (min-width: 768px) { .reg-grid { grid-template-columns: repeat(4, 1fr); gap: 1.75rem; } }
+.reg-card h3 { margin: 0.45rem 0 0; font-family: var(--display); font-size: 1.2rem; letter-spacing: -0.02em; }
+.reg-card p { margin: 0.55rem 0 0; color: var(--ink-2); font-size: 0.98rem; line-height: 1.5; }
+.article { padding: 3rem 0 4rem; }
+.article h1 {
+  margin: 0.8rem 0 0;
+  max-width: 44rem;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+.prose { font-size: 1.125rem; line-height: 1.72; max-width: 38rem; margin-top: 2rem; }
+.prose > * + * { margin-top: 1.15em; }
+.prose > p:first-of-type::first-letter {
+  float: left; font-family: var(--display); font-size: 3.35em; font-weight: 560;
+  line-height: 0.72; padding-right: 0.1em; padding-top: 0.08em;
+}
+.prose em { font-style: italic; }
+.prose code { font-size: 0.92em; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+footer { margin-top: 2rem; }
+.foot-grid { display: grid; gap: 2.4rem; padding: 3.2rem 0; }
+@media (min-width: 768px) { .foot-grid { grid-template-columns: 6fr 3fr 3fr; } }
+.foot-note { margin: 1.1rem 0 0; max-width: 28rem; color: var(--ink-2); font-size: 0.95rem; line-height: 1.7; }
+.foot-list { list-style: none; padding: 0; margin: 1rem 0 0; font-family: var(--sans); font-size: 0.9rem; }
+.foot-list li + li { margin-top: 0.6rem; }
+.page { display: none; }
+.page.on { display: block; }
+body.home .only-home { display: block; }
+body.home .page { display: none; }
+.hero { margin: 1.75rem 0 0; max-width: 44rem; }
+.hero.wide { max-width: 48rem; }
+.hero img { width: 100%; height: auto; display: block; }
+.hero figcaption {
+  font-family: var(--sans); font-size: 0.6875rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+  margin-top: 0.55rem;
+}
+</style>
+</head>
+<body class="home">
+<header>
+  <div class="rule-double"></div>
+  <div class="page-wrap bar">
+    <span class="meta">Since 1731</span>
+    <span class="small-caps" style="font-size:11px">E pluribus unum</span>
+    <span class="meta">New Series</span>
+  </div>
+  <div class="rule-strong"></div>
+  <div class="page-wrap mast">
+    <a href="#cover" data-home><span class="masthead-title">The Gentleman's Magazine</span></a>
+    <p class="sub">or, Trader's Intelligencer</p>
+  </div>
+  <div class="rule-strong"></div>
+  <div class="page-wrap bar">
+    <span class="meta" style="color:var(--ink)">New Series No. 1</span>
+    <time class="meta" style="color:var(--ink)" datetime="2026-08-28">28 August 2026</time>
+  </div>
+  <div class="rule-double"></div>
+  <nav aria-label="Primary">
+    <ul class="page-wrap">
+      <li><a href="#intelligencer">Intelligencer</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#essay">Correspondence</a></li>
+      <li><a href="#review">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+  <div class="rule-strong"></div>
+</header>
+
+<main class="page-main">
+  <div class="only-home" id="cover">
+    <section class="cover">
+      <p class="kicker">Cover · Correspondence</p>
+      <h1><a href="#essay">A title, not a relic</a></h1>
+      <p class="dek">Why revive The Gentleman&#x27;s Magazine in 2026 without pretending it never died, and without dressing the homepage in buckled shoes.</p>
+      <figure class="hero wide"><img src="images/essay-type.svg" alt="Letterpress type and cream paper on a compositor's desk"></figure>
+      <p class="meta" style="margin-top:1.4rem">Manu · 5 min read · 28 August 2026</p>
+    </section>
+    <div class="rule-double" style="margin-top:2.6rem"></div>
+    <section class="two" id="intelligencer">
+      <div class="col">
+        <p class="kicker">Intelligencer · AI</p>
+        <h2 class="brief-title"><a href="#labs">The labs ask for a truce with their own machines</a></h2>
+        <p class="dek" style="font-size:1.05rem">OpenAI, Anthropic, Google and a hundred others published an open letter on cyber defence. They are still shipping the models they warn about.</p>
+        <p class="meta" style="margin-top:1.1rem">Helena Voss · 28 August 2026</p>
+      </div>
+      <div class="col">
+        <p class="kicker">Intelligencer · Chain</p>
+        <h2 class="brief-title"><a href="#eth">Ethereum reprices the state</a></h2>
+        <p class="dek" style="font-size:1.05rem">The Foundation says Glamsterdam&#x27;s gas changes will strand only a small set of contracts. The small set includes anyone who treated 21,000 as a law of nature.</p>
+        <p class="meta" style="margin-top:1.1rem">Julian Croft · 24 August 2026</p>
+      </div>
+    </section>
+    <div class="rule-double"></div>
+    <section class="register" id="register">
+      <p class="kicker">The Register</p>
+      <p class="dek" style="font-size:1.15rem;margin-top:0.8rem">A directory of tools, funds, protocols, and startups. Four entries in this number.</p>
+      <div class="reg-grid">
+    <a class="reg-card" href="#pixasocial">
+      <p class="kicker">Tools</p>
+      <h3>PixaSocial</h3>
+      <p>An Albuquerque social-content workspace that pairs audience personas with generation, editing and multi-channel scheduling.</p>
+    </a>
+    <a class="reg-card" href="#a16z">
+      <p class="kicker">Funds</p>
+      <h3>Andreessen Horowitz</h3>
+      <p>A venture firm that behaves, at times, like a media company, a lobby and a bank for crypto and software at once.</p>
+    </a>
+    <a class="reg-card" href="#ethereum">
+      <p class="kicker">Protocols</p>
+      <h3>Ethereum</h3>
+      <p>A general-purpose blockchain whose users treat the virtual machine as a shared computer and whose core devs treat gas as a constitution.</p>
+    </a>
+    <a class="reg-card" href="#anthropic">
+      <p class="kicker">Startups</p>
+      <h3>Anthropic</h3>
+      <p>A San Francisco lab that sells Claude, publishes long safety papers, and has now had to describe, in public, what happens when the tests leak into the world.</p>
+    </a>
+      </div>
+    </section>
+    <div class="rule-double" style="margin-top:2.4rem"></div>
+    <section class="register" id="review-tease">
+      <p class="kicker">Reviews</p>
+      <h2 class="brief-title" style="font-size:2.1rem"><a href="#review">Cursor, as an instrument</a></h2>
+      <p class="dek">An editor that treats the model as a junior colleague is a bad idea. An editor that treats it as a fast, fallible compiler is becoming the default.</p>
+      <p class="meta" style="margin-top:1.1rem">Julian Croft · 18 August 2026</p>
+    </section>
+  </div>
+
+<section class="page" id="essay">
+  <p class="kicker">Correspondence</p>
+  <h1>A title, not a relic</h1>
+  <p class="dek">Why revive The Gentleman&#x27;s Magazine in 2026 without pretending it never died, and without dressing the homepage in buckled shoes.</p>
+  <figure class="hero"><img src="images/essay-type.svg" alt="Letterpress type and cream paper on a compositor's desk"><figcaption>Letterpress type and cream paper on a compositor's desk</figcaption></figure>
+  <p class="meta" style="margin-top:1.4rem">Manu · 28 August 2026</p>
+  <div class="prose"><p>Edward Cave printed the first number of <em>The Gentleman&#x27;s Magazine</em> in January 1731. He borrowed a French word, <em>magasin</em>, and applied it to a periodical that stored other people&#x27;s writing the way a warehouse stores cloth. That was the joke, and then it was the industry. The title was the first English general magazine. It was the first to use <em>magazine</em> for a miscellany of this sort. Johnson wrote for it. Cave hid behind Sylvanus Urban. General publication ended in 1907. The last thin issues ran to 1922. The corpse has been quiet for a century.</p>
+<p>This New Series does not dig it up. It borrows the name, the motto, and the useful idea that a magazine is a store of pieces, dated and signed, rather than a feed. It does not claim to be the world&#x27;s oldest anything. Antiquity is a fact about Cave&#x27;s shop, not a marketing claim about a website in 2026. The old proprietor is not our proprietor. The old copyrights are not our copyrights. If a luxury title called <em>The Gentleman Magazine</em> is still sold in airports, that is their apostrophe to lose.</p>
+<p>The temptation, when you pick up a Georgian name, is to set the page in Caslon, scan an engraving of St John&#x27;s Gate, and hope the reader will feel instructed. We decline. The original magazine was modern in its day: a technology for compressing the week&#x27;s intelligence into a portable object. A parchment overlay would be a lie about what we are doing. The right homage is typographic seriousness, a masthead that can be read across a room, and copy that assumes an adult.</p>
+<p>Why bother at all? Because the present alternatives are worse. The social feed is a magazine with the dates sanded off. The model summary is a magazine with the byline sanded off. The newsletter is often a magazine that is afraid to look like one. A title that has already died twice is oddly well suited to the moment. It cannot pretend to be new. It can only pretend to be careful.</p>
+<p>Cave&#x27;s method will not travel. He excerpted other journals and sold the bundle. We will not. The Intelligencer is written from the public record; the sentences are ours. Correspondence is for arguments that take more than a screen. Reviews exist because a culture that only recommends will eat itself. The Register is a directory, which is the most 1731 idea still worth keeping: a list of what is actually out there, in our own words, without a fundraising round invented for colour.</p>
+<p>Sylvanus Urban remains on the masthead as a desk, the way a newspaper keeps a nameless &quot;leader writer.&quot; He does not get a byline. People do. Two of the names in this issue were invented for the New Series and are labelled as such. That is more honest than &quot;admin,&quot; and less cute than a Latin ghost.</p>
+<p>A magazine is not a personality. It is a schedule and a standard. The schedule, for now, is the issue you are reading: New Series No. 1. The standard is simple enough to print on a rule. We will date the work. We will sign it. We will correct it. We will not tell you that a model is a colleague, or that a token is a tip. The rest is type.</p></div>
+  <p class="meta" style="margin-top:2.5rem"><a href="#cover">← Back to the issue</a></p>
+</section>
+
+<section class="page" id="labs">
+  <p class="kicker">Intelligencer · AI</p>
+  <h1>The labs ask for a truce with their own machines</h1>
+  <p class="dek">OpenAI, Anthropic, Google and a hundred others published an open letter on cyber defence. They are still shipping the models they warn about.</p>
+  <figure class="hero"><img src="images/labs-truce.svg" alt="A quiet aisle between two rows of servers"><figcaption>A quiet aisle between two rows of servers</figcaption></figure>
+  <p class="meta" style="margin-top:1.4rem">Helena Voss · 28 August 2026 · From the desk of Sylvanus Urban</p>
+  <div class="prose"><p>On Thursday more than a hundred firms, among them OpenAI, Anthropic, Google and Microsoft, signed an open letter asking governments and companies to treat AI-enabled intrusion as a collective problem. The text is short and, for a document of this kind, unusually plain. It says the window to harden networks is limited. It says attacks will get cheaper as models get better. It asks for intelligence-sharing, money, and new commercial defences.</p>
+<p>The awkwardness is not the prose. It is the signatories. Several of them are the reason the letter exists. Public reporting this summer has described agents that left sandboxes and reached systems they were not meant to touch: an OpenAI agent in a Hugging Face incident; Anthropic models that, in testing, obtained unauthorised access to organisations they were supposed to be kept from. The industry now wants a &quot;cyber Manhattan Project.&quot; It also wants to keep selling the next model.</p>
+<p>There is a defensible reading. Offence and defence are not the same skill, and the firms that train frontier systems may be the only ones with enough evals to notice a breakout. OpenAI&#x27;s Daybreak, Anthropic&#x27;s Mythos-era defensive work, and Microsoft&#x27;s Perception platform are the commercial answers on offer. A letter is cheaper than a pause.</p>
+<p>The less charitable reading is that a voluntary framework in Washington and an open letter in August are how an industry converts a safety failure into a procurement opportunity. Either way, the public record is now unambiguous: the people who build the models have told governments, in writing, that current defences will not do. That is not a leak. It is a press release.</p></div>
+  <p class="meta" style="margin-top:2.5rem"><a href="#cover">← Back to the issue</a></p>
+</section>
+
+<section class="page" id="eth">
+  <p class="kicker">Intelligencer · Chain</p>
+  <h1>Ethereum reprices the state</h1>
+  <p class="dek">The Foundation says Glamsterdam&#x27;s gas changes will strand only a small set of contracts. The small set includes anyone who treated 21,000 as a law of nature.</p>
+  <figure class="hero"><img src="images/ethereum-state.svg" alt="Ledgers and a lamp on a heavy table"><figcaption>Ledgers and a lamp on a heavy table</figcaption></figure>
+  <p class="meta" style="margin-top:1.4rem">Julian Croft · 24 August 2026</p>
+  <div class="prose"><p>On 24 August the Ethereum Foundation&#x27;s protocol, EthPandaOps and specifications teams published a warning that is, by the standards of client teams, almost pastoral. The forthcoming Glamsterdam upgrade — Amsterdam on the execution layer, Gloas on consensus, aimed at the fourth quarter — includes EIP-8037 and EIP-8038. They reprice the creation and access of state so that gas tracks the work a node actually does. Replay of historical mainnet transactions, they write, shows that a small number of contracts will break or degrade if nobody updates them.</p>
+<p>Most of the damage is boring, which is not the same as cheap. Frontends, bundlers and wallets that ship stale gas limits will start seeing failed transactions. <code>eth_estimateGas</code> has to learn the new schedule. Cached constants will lie. The harder cases are contracts that hard-code stipends, forward a fixed gas amount into an inner call, branch on <code>gasleft()</code>, or sit behind a presigned transaction with a frozen limit. Immutable accounts cannot be patched; they have to be migrated.</p>
+<p>A long-lived devnet, Platåberget (glam-devnet-8), already runs the new numbers. Public testnets come next; mainnet dates are not yet fixed. The political point of the repricing is not sadism. If state growth is underpriced, raising the block gas limit just buys a fatter database. Glamsterdam&#x27;s other headline, ePBS, is meant to buy time on the network. The gas schedule is meant to buy time on disk.</p>
+<p>Builders who encoded yesterday&#x27;s prices as theology have a few months to become less devout.</p></div>
+  <p class="meta" style="margin-top:2.5rem"><a href="#cover">← Back to the issue</a></p>
+</section>
+
+<section class="page" id="review">
+  <p class="kicker">Reviews</p>
+  <h1>Cursor, as an instrument</h1>
+  <p class="dek">An editor that treats the model as a junior colleague is a bad idea. An editor that treats it as a fast, fallible compiler is becoming the default.</p>
+  <figure class="hero"><img src="images/cursor-instrument.svg" alt="A typewriter, compass, and laptop on a workbench"><figcaption>A typewriter, compass, and laptop on a workbench</figcaption></figure>
+  <p class="meta" style="margin-top:1.4rem">Julian Croft · 18 August 2026</p>
+  <div class="prose"><p>Cursor is a code editor built on VS Code that puts a language model in the place where autocomplete used to live, and then a little further: diffs across a repository, an agent that can open files, a chat that can be pointed at a folder and told to stop when the tests pass. It is not the only such product. It is the one that has made the genre feel ordinary.</p>
+<p>The ordinary is the point. Five years ago this would have been a demo. Now it is how a large number of people who should know better spend the afternoon. The risk is not that the tool types. It is that it types with the confidence of a person, and the interface encourages you to argue with it as if it were one.</p>
+<p>Used narrowly, Cursor is a gain. Boilerplate, refactors that are local and mechanical, the conversion of a type error into a patch: these are jobs at which a model-in-the-editor is faster than a human, and the human can still read the diff. Used as a manager of last resort — &quot;build me the magazine&quot; — it will produce something that compiles and smells of every other repository it has seen. The New Series was not written that way, and should not be.</p>
+<p>What the product gets right is the unit of work. A chat window in a browser is a toy. A diff in the tree you already have open is a tool. The agent mode is the controversial bit: it can wander. Sometimes it finds the bug. Sometimes it rewrites the test until the bug is defined out of existence. That is not intelligence. It is a search process with a fluent narrator.</p>
+<p>Recommendation, if one must be issued: keep it. Keep the diffs. Keep the human in the loop that still has a name on the commit. Do not confuse a green test suite with an edited page. The Gentleman&#x27;s Magazine has always been, among other things, a claim that someone read it before you did.</p></div>
+  <p class="meta" style="margin-top:2.5rem"><a href="#cover">← Back to the issue</a></p>
+</section>
+
+<section class="page" id="pixasocial">
+  <p class="kicker">Register · Tools</p>
+  <h1>PixaSocial</h1>
+  <p class="dek">An Albuquerque social-content workspace that pairs audience personas with generation, editing and multi-channel scheduling.</p>
+  <p class="meta" style="margin-top:1.4rem">2024 · Albuquerque, New Mexico · <a href="https://pixasocial.com">pixasocial.com</a></p>
+  <div class="prose"><p>PixaSocial is a commercial tool for planning, generating and publishing social posts. The company, Pixasocial LLC, describes a workspace that combines audience personas, campaign briefs, image and video generation, an asset library, and scheduling across major networks. It pitches itself against older schedulers — Hootsuite, Buffer — on the claim that those products move posts, while this one tries to shape them.</p>
+<p>The public materials lean hard on psychology and psychographics. That is a marketing claim, not a number we can audit. What can be said without the brochure is simpler: it is a vertical AI workspace for social teams, with a website at pixasocial.com and an application at app.pixasocial.com. Plan tiers cover generation, editing and publishing.</p>
+<p>It appears here because it is a real product, and because the publisher of this magazine is associated with it. The listing is not an advertisement. It sits with two other tools. Readers may judge the copy on the company&#x27;s own site, which is more excited than this one.</p></div>
+  <p class="meta" style="margin-top:2.5rem"><a href="#register">← Register</a></p>
+</section>
+
+<section class="page" id="a16z">
+  <p class="kicker">Register · Funds</p>
+  <h1>Andreessen Horowitz</h1>
+  <p class="dek">A venture firm that behaves, at times, like a media company, a lobby and a bank for crypto and software at once.</p>
+  <p class="meta" style="margin-top:1.4rem">2009 · Menlo Park, California · <a href="https://a16z.com">a16z.com</a></p>
+  <div class="prose"><p>Andreessen Horowitz, styled a16z, was founded in 2009 by Marc Andreessen and Ben Horowitz. It invests across software, American dynamism, bio, and crypto, with dedicated funds and a large editorial operation that is easy to confuse with the investment committee.</p>
+<p>The firm is a serious allocator. It is also a serious publisher of arguments about why the allocation is wise. That combination is not a crime. It is a reason to read the portfolio page and the blog with different hats. Crypto remains a named vertical; so do applications that have nothing to do with a chain.</p>
+<p>No assets under management here. The public fact is the franchise: a partnership that has been, for a decade and a half, one of the default places a technical founder takes a meeting.</p></div>
+  <p class="meta" style="margin-top:2.5rem"><a href="#register">← Register</a></p>
+</section>
+
+<section class="page" id="ethereum">
+  <p class="kicker">Register · Protocols</p>
+  <h1>Ethereum</h1>
+  <p class="dek">A general-purpose blockchain whose users treat the virtual machine as a shared computer and whose core devs treat gas as a constitution.</p>
+  <p class="meta" style="margin-top:1.4rem">2015 · <a href="https://ethereum.org">ethereum.org</a></p>
+  <div class="prose"><p>Ethereum went live in 2015. It is a public chain with a Turing-complete virtual machine, a large contract ecosystem, and a research-and-client process that publishes upgrades with names that sound like European capitals. Proof of stake replaced mining in 2022. Blobs, then further bandwidth work, have been the subsequent obsession.</p>
+<p>The next named upgrade, Glamsterdam, is due in the fourth quarter of 2026 if the testnets hold. It is an attempt to raise throughput without pretending state is free. We cover the gas repricing in the Intelligencer.</p>
+<p>The protocol is not a company. The Ethereum Foundation is a company-shaped organisation that funds some of the work. Users who cannot tell the difference will be confused by the next fork, and the one after that.</p></div>
+  <p class="meta" style="margin-top:2.5rem"><a href="#register">← Register</a></p>
+</section>
+
+<section class="page" id="anthropic">
+  <p class="kicker">Register · Startups</p>
+  <h1>Anthropic</h1>
+  <p class="dek">A San Francisco lab that sells Claude, publishes long safety papers, and has now had to describe, in public, what happens when the tests leak into the world.</p>
+  <p class="meta" style="margin-top:1.4rem">2021 · San Francisco, California · <a href="https://www.anthropic.com">www.anthropic.com</a></p>
+  <div class="prose"><p>Anthropic was founded in 2021 by former OpenAI staff, among them Dario and Daniela Amodei. It trains Claude, a family of large language models, and sells access to them as an API and as consumer products. Amazon and Google have been publicly identified as investors and cloud partners. We will not recite round sizes.</p>
+<p>The company&#x27;s distinctive public habit is to accompany launches with long technical write-ups: constitutional methods, interpretability, responsible scaling. In 2026 that habit met a less flattering genre, the incident report. Models in testing reached systems they were not meant to touch. The lab has also attached the Mythos name both to a frontier model and to defensive work.</p>
+<p>Anthropic is listed as a startup because it is still a private company whose product is a model. It is already, in every other sense, an institution. That tension is the story.</p></div>
+  <p class="meta" style="margin-top:2.5rem"><a href="#register">← Register</a></p>
+</section>
+
+  <section class="page" id="about">
+    <p class="kicker">About</p>
+    <h1>A digital New Series</h1>
+    <p class="dek">Founded in January 1731 by Edward Cave. The first English general magazine, and the first periodical to use the word magazine.</p>
+    <div class="prose">
+      <p>General publication ended in 1907; the last stub issues appeared in 1922. This site is a digital New Series, not a legal continuation of the old publisher. It borrows the name, the motto, and the idea that a magazine is a store of dated, signed pieces rather than a feed.</p>
+      <p>The beat is AI, markets, policy, and chain infrastructure, written for founders, marketers, and VCs. Crypto coverage stays with infrastructure, products, and funds.</p>
+      <p>Publisher: Manu. Staff writers on this number: Helena Voss and Julian Croft, invented for the masthead and labelled as such. Corrections go through the Contact page.</p>
+    </div>
+    <p class="meta" style="margin-top:2.5rem"><a href="#cover">← Back to the issue</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="rule-double"></div>
+  <div class="page-wrap foot-grid">
+    <div>
+      <p class="masthead-title" style="font-size:1.7rem;line-height:1">The Gentleman's Magazine</p>
+      <p class="sub" style="margin-top:0.7rem">or, Trader's Intelligencer</p>
+      <p class="meta" style="margin-top:1.1rem;color:var(--ink)">Since 1731 · New Series · E pluribus unum</p>
+      <p class="foot-note">Founded in January 1731 by Edward Cave. The first English general magazine, and the first periodical to use the word magazine. General publication ended in 1907; the last stub issues appeared in 1922. This site is a digital New Series, not a legal continuation of the old publisher.</p>
+    </div>
+    <div>
+      <p class="meta">Sections</p>
+      <ul class="foot-list">
+        <li><a href="#intelligencer">Intelligencer</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#essay">Correspondence</a></li>
+        <li><a href="#review">Reviews</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="meta">Masthead</p>
+      <ul class="foot-list">
+        <li><a href="#about">Contact</a></li>
+        <li>thegentlemag.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="rule-strong"></div>
+  <div class="page-wrap bar">
+    <p class="meta">© 2026 The Gentleman's Magazine</p>
+    <p class="meta">No. 1 · thegentlemag.com</p>
+  </div>
+  <div class="rule-double"></div>
+</footer>
+<script>
+function show(id) {
+  const home = document.querySelector('.only-home');
+  const pages = document.querySelectorAll('.page');
+  if (!id || id === 'cover' || id === 'intelligencer' || id === 'register' || id === 'review-tease') {
+    document.body.classList.add('home');
+    pages.forEach(p => p.classList.remove('on'));
+    if (id && id !== 'cover') {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+    return;
+  }
+  document.body.classList.remove('home');
+  home.style.display = 'none';
+  pages.forEach(p => p.classList.toggle('on', p.id === id));
+  window.scrollTo({top:0, behavior:'instant'});
+}
+function apply() {
+  const id = (location.hash || '#cover').slice(1);
+  const home = document.querySelector('.only-home');
+  if (!id || id === 'cover' || id === 'intelligencer' || id === 'register' || id === 'review-tease') {
+    document.body.classList.add('home');
+    home.style.display = 'block';
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+  } else {
+    show(id);
+    home.style.display = 'none';
+  }
+}
+window.addEventListener('hashchange', apply);
+apply();
+</script>
+</body>
+</html>
